@@ -1,0 +1,130 @@
+body {
+  font-family: "Inter", Arial, sans-serif; /* Using Inter font with Arial fallback */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Use min-height for better responsiveness */
+  margin: 0;
+  background-color: #f0f2f5; /* Light background */
+  box-sizing: border-box;
+  padding: 20px; /* Add padding for small screens */
+}
+
+#calculator-container {
+  background: #ffffff;
+  padding: 30px; /* Increased padding */
+  border-radius: 12px; /* More rounded corners */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Stronger shadow */
+  width: 100%;
+  max-width: 400px; /* Max width for desktop */
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Space between elements */
+  text-align: center;
+  box-sizing: border-box;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 2em; /* Larger heading */
+}
+
+input[type="number"] {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px; /* Rounded input fields */
+  width: calc(100% - 24px); /* Full width minus padding */
+  font-size: 1.1em;
+  margin-bottom: 10px; /* Space between inputs */
+  box-sizing: border-box; /* Include padding in width */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="number"]:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+.buttons-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns for buttons */
+  gap: 10px; /* Space between buttons */
+  margin-top: 10px;
+}
+
+button {
+  padding: 15px 20px; /* Larger padding for buttons */
+  font-size: 1.2em; /* Larger font for symbols */
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px; /* Rounded buttons */
+  transition: background-color 0.3s ease, transform 0.2s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 123, 255, 0.2);
+  font-weight: 700;
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 123, 255, 0.2);
+}
+
+#result {
+  margin-top: 25px; /* More space above result */
+  font-size: 1.5em; /* Larger result text */
+  color: #333;
+  font-weight: 600;
+  padding: 10px;
+  background-color: #e9ecef; /* Light background for result */
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+}
+
+#calculation-result {
+  color: #007bff; /* Highlight result number */
+}
+
+.feedback-message {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 1em;
+  color: #dc3545; /* Red for errors */
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  display: none; /* Hidden by default */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 480px) {
+  #calculator-container {
+    padding: 20px;
+    margin: 10px;
+    gap: 10px;
+  }
+  h2 {
+    font-size: 1.8em;
+  }
+  input[type="number"] {
+    font-size: 1em;
+    padding: 10px;
+  }
+  button {
+    padding: 12px 15px;
+    font-size: 1.1em;
+  }
+  #result {
+    font-size: 1.3em;
+    margin-top: 20px;
+  }
+}
